@@ -17,7 +17,7 @@ def ClienteUDP(argv):
     colunas, linhas = shutil.get_terminal_size(fallback=(80, 24)) # é só para desenhar o texto
 
     #logFile
-    logging.basicConfig(filename="logfileclient3.log", level=logging.INFO)
+    logging.basicConfig(filename="Logs/logfileclient3.log", level=logging.INFO)
     
     parser = argparse.ArgumentParser(
         description='Simulador de trafego TCP cliente.')

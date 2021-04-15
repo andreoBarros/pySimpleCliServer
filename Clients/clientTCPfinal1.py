@@ -24,23 +24,23 @@ def ClienteUDP(argv):
     colunas, linhas = shutil.get_terminal_size(fallback=(80, 24)) # é só para desenhar o texto
     
     # Desenhando gr'afico inicial ------------------------------------------------------------------
-    fig, ax = plt.subplots(1, 1)
-    ax.set_aspect('equal')
-    ax.set_xlim(0, 255)
-    ax.set_ylim(0, 255)
-    ax.hold(True)
-    nextXpoint = 0
-    x = 0
-    y = 0
-    plt.show(True)
-    plt.draw()
+    # fig, ax = plt.subplots(1, 1)
+    # ax.set_aspect('equal')
+    # ax.set_xlim(0, 255)
+    # ax.set_ylim(0, 255)
+    # ax.hold(True)
+    # nextXpoint = 0
+    # x = 0
+    # y = 0
+    # plt.show(True)
+    # plt.draw()
 
-    background = fig.canvas.copy_from_bbox(ax.bbox)
+    # background = fig.canvas.copy_from_bbox(ax.bbox)
 
-    points = ax.plot(x, y, 'o')[0]
-    tic = time.time()
+    # points = ax.plot(x, y, 'o')[0]
+    # tic = time.time()
     #logFile ------------------------------------------------------------------------------------------
-    logging.basicConfig(filename="logfileclient1.log", level=logging.INFO)
+    logging.basicConfig(filename="Logs/logfileclient1.log", level=logging.INFO)
     
     parser = argparse.ArgumentParser(
         description='Simulador de trafego TCP cliente.')
@@ -83,18 +83,18 @@ def ClienteUDP(argv):
        
        #Graph related stuff
        # update the xy data
-       KbytesPerSecond = bitsPerSecond/8000
-       x = nextXpoint
-       y = KbytesPerSecond
-       points.set_data(x, y)
-       # restore background
-       fig.canvas.restore_region(background)
-       # redraw just the points
-       ax.draw_artist(points)
-       # fill in the axes rectangle
-       fig.canvas.blit(ax.bbox)
-       # prepara o proximo ponto
-       nextXpoint+=1
+    #    KbytesPerSecond = bitsPerSecond/8000
+    #    x = nextXpoint
+    #    y = KbytesPerSecond
+    #    points.set_data(x, y)
+    #    # restore background
+    #    fig.canvas.restore_region(background)
+    #    # redraw just the points
+    #    ax.draw_artist(points)
+    #    # fill in the axes rectangle
+    #    fig.canvas.blit(ax.bbox)
+    #    # prepara o proximo ponto
+    #    nextXpoint+=1
 
     #    plt.ion() ## Note this correction
     #    fig=plt.figure()
